@@ -2,8 +2,7 @@ from PyQt5 import QtCore
 from dataModel import *
 import math
 import numpy as np
-
-from recordclass import recordclass
+import source
 
 distance_limit = 1
 Pref = 20e-6
@@ -56,12 +55,10 @@ def pascalsTodB(P):
 class Simulator:
     def __init__(self):
 
-        sub1 = Source(-5, 0, True, False, 0, 0)
-        sub2 = Source(0, 2, False, False, 0, 0)
-        sub3 = Source(5, 0, True, False, 0, 0)
-        sub4 = Source(0, 0, True, True, 0, 0)
-
-        initialList=[sub1, sub2, sub3, sub4]
+        sub1 = source.Source(-1, 0, True, False, 0, 0)
+        sub2= source.Source(1, 0, True, False, 0, 0)
+        
+        initialList=[sub1, sub2]
         self.sourcesModel = SourcesModel(initialList)
 
         self.xmin = -15
@@ -70,8 +67,8 @@ class Simulator:
         self.ymax = 15
 
 
-        self.xsamples = 200
-        self.ysamples = 200
+        self.xsamples = 150
+        self.ysamples = 150
         
 
         #Sound pressure level [dBa @ 1m]

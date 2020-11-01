@@ -1,13 +1,11 @@
 #import collections
 from PyQt5 import QtCore
 from PyQt5.QtCore import Qt
-from recordclass import recordclass
+import source
 
 
 #Source = collections.namedtuple('Source', ['x', 'y', 'active', 'invert', 'delay', 'gain'])
 #Would you belive that? namedtuple is suggested as struct replacement, but is immutable
-
-Source = recordclass('Source', ['x', 'y', 'active', 'invert', 'delay', 'gain'])
 
 class SourcesModel(QtCore.QAbstractTableModel):
     def __init__(self, sources=None, *args, **kwargs):
@@ -50,7 +48,7 @@ class SourcesModel(QtCore.QAbstractTableModel):
         return 6
 
     def add(self, source=None):
-        self.sources.append(source or Source(0, 0, True, False, 0, 0))
+        self.sources.append(source or sources.Source())
         self.layoutChanged.emit()
 
     def delete(self, indices):
