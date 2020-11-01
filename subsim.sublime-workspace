@@ -1,0 +1,1351 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"add",
+				"addWidget\tinstance"
+			],
+			[
+				"Graph",
+				"GraphicsWidget\tclass"
+			],
+			[
+				"QV",
+				"QVBoxLayout\tclass"
+			],
+			[
+				"QWI",
+				"QWidget\tclass"
+			],
+			[
+				"QW",
+				"QWidget\tclass"
+			],
+			[
+				"Ima",
+				"ImageView\tclass"
+			],
+			[
+				"simu",
+				"simulator\tstatement"
+			],
+			[
+				"phi",
+				"phi2\tstatement"
+			],
+			[
+				"a",
+				"a2\tstatement"
+			],
+			[
+				"super",
+				"superposeWaveArray\tfunction"
+			],
+			[
+				"pha",
+				"phaseShift"
+			],
+			[
+				"Phase",
+				"phaseShift"
+			],
+			[
+				"press",
+				"pressureArray\tstatement"
+			],
+			[
+				"app",
+				"apply_along_axis\tfunction"
+			],
+			[
+				"D_",
+				"D_rel"
+			],
+			[
+				"source",
+				"sourceNum"
+			],
+			[
+				"sources",
+				"sourcesArray"
+			],
+			[
+				"dist",
+				"distancesArray\tstatement"
+			],
+			[
+				"D",
+				"D_rel\tparam"
+			],
+			[
+				"distances",
+				"distancesArray\tstatement"
+			],
+			[
+				"sour",
+				"sourcesArray\tstatement"
+			],
+			[
+				"cou",
+				"compute_grid_action"
+			],
+			[
+				"cosWa",
+				"cosWaves\tstatement"
+			],
+			[
+				"cos",
+				"cosWaves\tstatement"
+			],
+			[
+				"lo",
+				"log10\tinstance"
+			],
+			[
+				"dista",
+				"distance\tfunction"
+			],
+			[
+				"sou",
+				"sourcesModel\tstatement"
+			],
+			[
+				"dis",
+				"distance\tfunction"
+			],
+			[
+				"distan",
+				"distances\tstatement"
+			],
+			[
+				"DISTA",
+				"distances\tstatement"
+			],
+			[
+				"floa",
+				"float64"
+			],
+			[
+				"x",
+				"x_coords"
+			],
+			[
+				"atan",
+				"atan2\tfunction"
+			],
+			[
+				"re",
+				"recrdtype"
+			],
+			[
+				"com",
+				"compute_grid_action"
+			],
+			[
+				"co",
+				"compute_grid_action"
+			],
+			[
+				"Simulator",
+				"SimulatorToolbar"
+			],
+			[
+				"QT",
+				"QToolBar"
+			],
+			[
+				"Qt",
+				"QtCore"
+			],
+			[
+				"row",
+				"row_indices"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"ind",
+				"index"
+			],
+			[
+				"Sou",
+				"sourcesModel"
+			],
+			[
+				"main",
+				"MainWindow"
+			],
+			[
+				"Source",
+				"SourceManager"
+			],
+			[
+				"Sour",
+				"SourceManager"
+			],
+			[
+				"ad",
+				"addWidget"
+			],
+			[
+				"sub",
+				"sub2\tstatement"
+			],
+			[
+				"mai",
+				"mainLayout\tstatement"
+			],
+			[
+				"mia",
+				"mainLayout\tstatement"
+			],
+			[
+				"QTa",
+				"QTableView\tclass"
+			],
+			[
+				"but",
+				"button_action\tstatement"
+			],
+			[
+				"setS",
+				"setStatusTip\tmodule"
+			],
+			[
+				"anti",
+				"antikrist_action\tstatement"
+			],
+			[
+				"QI",
+				"QIcon\tclass"
+			],
+			[
+				"Py",
+				"PyQt5\tmodule"
+			],
+			[
+				"bu",
+				"button_action\tstatement"
+			],
+			[
+				"Qa",
+				"QAction"
+			],
+			[
+				"setWi",
+				"setWindowTitle\tmodule"
+			],
+			[
+				"po",
+				"PortSelector\tclass"
+			],
+			[
+				"la",
+				"layout\tstatement"
+			],
+			[
+				"start",
+				"started"
+			],
+			[
+				"sta",
+				"started\tstatement"
+			],
+			[
+				"log",
+				"log_thread\tstatement"
+			],
+			[
+				"ali",
+				"align_yaxis\tfunction"
+			],
+			[
+				"U",
+				"Uout0\tstatement"
+			],
+			[
+				"de",
+				"delimiter\tparam"
+			],
+			[
+				"d",
+				"data"
+			],
+			[
+				"da",
+				"dataA"
+			],
+			[
+				"data",
+				"dataA"
+			],
+			[
+				"os",
+				"osciloskop"
+			],
+			[
+				"for",
+				"format\tfunction"
+			],
+			[
+				"num",
+				"num_a\tstatement"
+			],
+			[
+				"cle",
+				"\\clearpage                                        \tlatex-document"
+			],
+			[
+				"di",
+				"diag"
+			],
+			[
+				"pit",
+				"\\pitaya{}                                         \tlocal"
+			],
+			[
+				"over",
+				"\\overline{text}                                   \tlatex-document"
+			],
+			[
+				"pro",
+				"\\propto                                           \tlatex-mathsymbols"
+			],
+			[
+				"foot",
+				"\\footnote                                         \ttex"
+			],
+			[
+				"lang",
+				"\\langle                                           \tlatex-mathsymbols"
+			],
+			[
+				"ri",
+				"\\rightarrow                                       \tlatex-mathsymbols"
+			],
+			[
+				"inf",
+				"\\infty                                            \tlatex-mathsymbols"
+			],
+			[
+				"alp",
+				"\\alpha                                            \tlatex-mathsymbols"
+			],
+			[
+				"load",
+				"loadtxt\tfunction"
+			],
+			[
+				"as",
+				"asarray\tfunction"
+			],
+			[
+				"end",
+				"end_amplitude\tparam"
+			],
+			[
+				"star",
+				"start_amplitude\tparam"
+			],
+			[
+				"en",
+				"end_amplitude\tparam"
+			],
+			[
+				"samp",
+				"samples\tstatement"
+			],
+			[
+				"ramp",
+				"ramp_samples\tstatement"
+			],
+			[
+				"ed",
+				"end_sample\tstatement"
+			],
+			[
+				"save",
+				"savetxt\tfunction"
+			],
+			[
+				"loa",
+				"load_data\tfunction"
+			],
+			[
+				"pa",
+				"param_start\tstatement"
+			],
+			[
+				"ax",
+				"axvline\tfunction"
+			],
+			[
+				"plot",
+				"plot_pressure"
+			],
+			[
+				"loca",
+				"local_command\tstatement"
+			],
+			[
+				"sys",
+				"system\tfunction"
+			],
+			[
+				"P",
+				"P_comment\tstatement"
+			],
+			[
+				"comm",
+				"comment\tparam"
+			],
+			[
+				"P_pre",
+				"P_pressure\tstatement"
+			],
+			[
+				"pre",
+				"preionization"
+			],
+			[
+				"str",
+				"strcmp"
+			],
+			[
+				"beg",
+				"beg_sample\tstatement"
+			],
+			[
+				"u",
+				"u_sensed\tstatement"
+			],
+			[
+				"pul",
+				"pulse_amplit"
+			],
+			[
+				"buf",
+				"buff_size"
+			],
+			[
+				"print",
+				"printf\tprintf …"
+			],
+			[
+				"t",
+				"t_last\tstatement"
+			],
+			[
+				"vs",
+				"vstack\tfunction"
+			],
+			[
+				"RP",
+				"RP_CH_1"
+			],
+			[
+				"out",
+				"out_l\tstatement"
+			],
+			[
+				"sam",
+				"samples\tstatement"
+			],
+			[
+				"pl",
+				"plot\tfunction"
+			],
+			[
+				"wri",
+				"write\tfunction"
+			],
+			[
+				"Buff",
+				"buff_size"
+			],
+			[
+				"ze",
+				"zeros_like\tfunction"
+			],
+			[
+				"lin",
+				"linspace\tfunction"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 172,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "simulation.py",
+			"settings":
+			{
+				"buffer_size": 5162,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gui.py",
+			"settings":
+			{
+				"buffer_size": 3339,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dataModel.py",
+			"settings":
+			{
+				"buffer_size": 2615,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vojta/.config/sublime-text-3/Packages/Anaconda/README.md",
+			"settings":
+			{
+				"buffer_size": 6662,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "__init__.py",
+			"settings":
+			{
+				"buffer_size": 1,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vojta/voser/.gitignore",
+			"settings":
+			{
+				"buffer_size": 12,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vojta/voser/readme.md",
+			"settings":
+			{
+				"buffer_size": 826,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/tokamka.sublime-build",
+					""
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/tokamka.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"XeLaTeX"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/tokamka.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/ShellScript/ShellScript.sublime-build",
+					""
+				],
+				[
+					"Packages/User/tokamka.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/ShellScript/ShellScript.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: Equation"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/vojta/fel/ma/ukoly/ukol1.tex",
+		"/home/vojta/Skaut/KnihaKeya2019/krizovka.tex",
+		"/home/vojta/Skaut/KnihaKeya2019/obsah.tex",
+		"/home/vojta/Skaut/KnihaKeya2019/kniha.tex",
+		"/home/vojta/ArduinoRegulator/PCB_frezovani/iso2.nc",
+		"/home/vojta/python/SatanPyQt/app.py",
+		"/home/vojta/Audio/programovani/subsim/gui.py",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Fury.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Hate.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/I Know the Reaper.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Kaori Stomp.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Oki Kuma's Adventure.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Prelude to Empire.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Rise.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Reanimator.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Rogue World Asylum.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Ronin.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Seventeen.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/The Cavern of Lost Time.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Through the Looking Glass.mp3",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Empire.mp3",
+		"/home/vojta/python/learning/QPainter.py",
+		"/home/vojta/server-verejne/hudba/MaSu/Redeemer (Underground Edition)/Elite.mp3",
+		"/home/vojta/ipwebcam-gst/prepare-videochat.sh",
+		"/home/vojta/Audio/programovani/subsim/sub.py",
+		"/home/vojta/Audio/programovani/subsim/app.py",
+		"/home/vojta/melouchy/logger/src/subsim.py",
+		"/home/vojta/melouchy/logger/src/window.py",
+		"/home/vojta/melouchy/logger/src/portWidget.py",
+		"/home/vojta/Audio/GolfKarlovyVary/ffmpeg-batch-audio-resampler/batch_resample.sh",
+		"/home/vojta/learning/git/dummy1/.git/HEAD",
+		"/home/vojta/zivotopis/Awesome-CV/cv.xdv",
+		"/home/vojta/zivotopis/Awesome-CV/examples/coverletter.tex",
+		"/home/vojta/zivotopis/zivotopis.tex",
+		"/home/vojta/zivotopis/Simple/zivotopis.tex",
+		"/home/vojta/zivotopis/Simple/CV.cls",
+		"/usr/share/texmf-dist/tex/xelatex/xltxtra/xltxtra.sty",
+		"/home/vojta/.ssh/config",
+		"/home/vojta/Downloads/notebook(2).ipynb",
+		"/home/vojta/fjfi/Tokamak/dirigent/Analysis/Bolometry/notebook.ipynb",
+		"/home/vojta/Skaut/Urzoni/prumer.py",
+		"/home/vojta/Skaut/tabor18/hlidka.tex",
+		"/home/vojta/Skaut/tabor18/drsnak.tex",
+		"/home/vojta/Skaut/KKK/PRISPEVKY_UDOVE/Kometa - článek o táborové kuchyni.docx.txt",
+		"/home/vojta/Skaut/KnihaKeya2019/prispevky_deti/kocicaci.tex",
+		"/home/vojta/server-verejne/serialy/Breaking Bad/Breaking Bad Season 1/01 - Pilot [BluRay-REWARD].srt",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/amplifier_char/data_stat.txt",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/amplifier_char/scope_0.csv",
+		"/usr/share/texmf-dist/tex/latex/caption/subcaption.sty",
+		"/home/vojta/fjfi/bakalarka/prace/6_stabilizace.tex",
+		"/home/vojta/fjfi/bakalarka/GP_session1/ploy_intensity.py",
+		"/home/vojta/fjfi/bakalarka/GP_session1/shot.py",
+		"/home/vojta/fjfi/Tokamak/Bolo_stabilizace/notebook/contour1.ipynb",
+		"/tmp/mozilla_vojta0/AtPhys.tex",
+		"/home/vojta/Downloads/nme2_55_rzehulka.py",
+		"/tmp/mozilla_vojta0/README",
+		"/tmp/mozilla_vojta0/IOPEXPORT_BIB.bib",
+		"/home/vojta/hry/flashpoint/FPSoftware/wineprefix/dosdevices/z:/tmp/mozilla_vojta0/SawCAD.jnlp",
+		"/home/vojta/fjfi/Tokamak/pitaya_init/Makefile",
+		"/home/vojta/akademie/solvers/external/Makefile",
+		"/home/vojta/kdeconnect-NqlaiZ.txt",
+		"/home/vojta/Downloads/arduino-1.8.10/arduino",
+		"/home/vojta/Downloads/arduino-1.8.10/install.sh",
+		"/home/vojta/fjfi/bakalarka/waveform_generator/example_with_upload.py",
+		"/home/vojta/fjfi/bakalarka/prace/1_uvod_fuze.tex",
+		"/home/vojta/fjfi/bakalarka/prace/spellcheck/.gitignore",
+		"/home/vojta/fjfi/bakalarka/prace/BP.bbl",
+		"/tmp/mozilla_vojta0/19ZEL_maily.txt",
+		"/home/vojta/fjfi/KF/dinosteps.flac",
+		"/home/vojta/fjfi/bakalarka/GP_session1/Time_sequence_density.py",
+		"/home/vojta/invoice/Slideslive4.invoice",
+		"/home/vojta/Music/Leprous/2011 - Bilateral/_tests/t_DRMeterLog.txt",
+		"/home/vojta/Skaut/tabor18/drsnák.tex",
+		"/home/vojta/fjfi/bakalarka/stabilization/waveform_generator/Makefile",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/C_API/waveform_trig.c",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/MyHardware/TriggerAdapter/ZenerBc/plot.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/plot_pressure.py",
+		"/home/vojta/fjfi/bakalarka/RP_ssh/GasPuffing/calibration/run_calibration.sh",
+		"/home/vojta/fjfi/bakalarka/RP_ssh/GasPuffing/calibration/run_single.sh",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/waveform_generator2/generate_example_edit.py",
+		"/home/vojta/fjfi/bakalarka/prace/2_golem.tex",
+		"/home/vojta/fjfi/bakalarka/prace/.gitignore",
+		"/home/vojta/fjfi/bakalarka/ForPravesh/.gitignore",
+		"/home/vojta/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/home/vojta/fjfi/bakalarka/prace/4_gas_puffing.tex",
+		"/home/vojta/fjfi/bakalarka/prace/import-citace/940965.enw",
+		"/home/vojta/fjfi/bakalarka/Bakalarka.sublime-project",
+		"/tmp/mozilla_vojta0/export-bibtex-1558614427.bib",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/RedPitaya/examples/GasPuffing.c",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/RedPitaya/GasPuffing/arming.sh",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/RedPitaya/GasPuffing/charging.sh",
+		"/home/vojta/fjfi/bakalarka/oscilloscope/Makefile",
+		"/home/vojta/fjfi/bakalarka/prace/BP.aux",
+		"/home/vojta/fjfi/bakalarka/prace/3-tokamak.tex",
+		"/home/vojta/fjfi/bakalarka/prace/BP.fdb_latexmk",
+		"/home/vojta/fjfi/bakalarka/golem_sshfs/golem/daemon/api.py",
+		"/home/vojta/fjfi/bakalarka/golem_sshfs/golem/daemon/config/devices.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/calibration/pressure_response.c",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/RedPitaya/examples/calibration.c",
+		"/home/vojta/fjfi/bakalarka/prace/references.bib",
+		"/home/vojta/fjfi/bakalarka/stabilization/golem/Makefile",
+		"/home/vojta/fjfi/bakalarka/ForPravesh/all_chanels_30267.txt",
+		"/home/vojta/fjfi/bakalarka/RP.sh",
+		"/home/vojta/fjfi/bakalarka/Prace/header.tex",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/MyHardware/plot.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/waveform_generator2/waveform.py",
+		"/home/vojta/fjfi/bakalarka/stabilization/waveform_generator/waveform.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/calibration.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/control_gaspuffing.py",
+		"/home/vojta/fjfi/bakalarka/GP_session1/plot1.py",
+		"/tmp/mozilla_vojta0/minimal.tex",
+		"/tmp/mozilla_vojta0/loop_voltage_30100.txt",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/waveform_generator2/generate_ex0.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/waveform_generator2/generate_ex2.py",
+		"/home/vojta/fjfi/bakalarka/ForPravesh/plot1.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/waveform_generator2/generate_short_pulses.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/RP_commands",
+		"/home/vojta/fjfi/bakalarka/prace/packages.tex",
+		"/home/vojta/fjfi/NME2/zapocet/rk.cpp",
+		"/home/vojta/fjfi/NME2/zapocet/main.cpp",
+		"/home/vojta/fjfi/NME2/zapocet/NME2.sh",
+		"/home/vojta/fjfi/bakalarka/stabilization/rp_stabilization/predef/after.sh",
+		"/home/vojta/fjfi/bakalarka/stabilization/rp_stabilization/predef/arming.sh",
+		"/home/vojta/fjfi/bakalarka/stabilization/rp_stabilization/predef/charging.sh",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/RedPitaya/examples/analog_inputs.c",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/Control/RedPitaya/examples/generate_burst_trigger_software.c",
+		"//home/vojta/fjfi/bakalarka/stabilization/waveform_generator/waveform.py",
+		"/home/vojta/fjfi/bakalarka/GasPuffing/calibration/Makefile"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 116.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pq.ImageView",
+			"PlotWidget",
+			"sourcesArray",
+			"distancesArray",
+			"phiArray",
+			"phaseShiftArray",
+			"pressureArray",
+			"100",
+			"distance",
+			"source",
+			"sin",
+			"1",
+			"math.",
+			"dataM",
+			"this",
+			"colu",
+			"M03",
+			"QtCore",
+			"Qt",
+			"QtCore.",
+			"del self.sources[index.row()]",
+			"onMyToolBarButtonClick",
+			"button_action"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sources_array",
+			"distances_array",
+			"phi_array",
+			"phase_shift_array",
+			"pressure_array",
+			"self",
+			"M03 S1000",
+			"vypisSatan",
+			"satan_action"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								172,
+								172
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "simulation.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1445,
+								1445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "gui.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3215,
+								3215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "dataModel.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1700,
+								1700
+							]
+						],
+						"settings":
+						{
+							"spell_check": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/vojta/.config/sublime-text-3/Packages/Anaconda/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "/home/vojta/voser/.gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/vojta/voser/readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 826,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 238.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 172.0
+	},
+	"pinned_build_system": "",
+	"project": "subsim.sublime-workspace",
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 501.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 381.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 253.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
