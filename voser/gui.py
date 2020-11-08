@@ -2,11 +2,12 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
-import pyqtgraph as pq
-
+import pyqtgraph as pg
 import sys
 from simulation import Simulator
 
+import checkbox
+import datamodel
 
 # Subclass QMainWindow to customise your application's main window
 class MainWindow(QMainWindow):
@@ -14,9 +15,18 @@ class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
 
+
+        sub1 = datamodel.Source(-1, 0, True, False, 0, 0)
+        sub2 = datamodel.Source(1, 0, True, False, 0, 0)        
+        initialList=[sub1, sub2]
+
+        self.sourcesModel = datamodel.SourcesModel(initialList)
+
         self.simulator = Simulator();
         
         self.setWindowTitle("VOSER")
+        #self.setGeometry(0,0,768,960)
+        self.resize(760, 860)
         
 
         mainLayout = QVBoxLayout()
@@ -24,14 +34,19 @@ class MainWindow(QMainWindow):
         toolbar = SimulatorToolbar(self.simulator)
         self.addToolBar(toolbar)
         self.viewer= GraphViewer(self.simulator)
-        source_manager = SourceManager(self.simulator.getSourcesModel());
+        source_manager = SourceManager(self.sourcesModel)
 
+        compute = lambda : self.simulator.compute(self.sourcesModel.getActiveSources())
 
-        compute_grid_action = QAction(QIcon("img/grid.png"), "compute grid", self)
-        compute_grid_action.triggered.connect(self.simulator.computeGrid)
-        compute_grid_action.triggered.connect(self.viewer.plotResult)
+        #print(self.sourcesModel.getActiveSources())
 
-        toolbar.addAction(compute_grid_action)
+        compute_action = QAction(QIcon("./img/compute.png"), "compute grid", self)
+        compute_action.triggered.connect(compute)
+        '''
+        compute = lambda sources=self.sourcesModel.getActiveSources(): self.simulator.compute(sources)
+        '''
+        compute_action.triggered.connect(self.viewer.plotResult)
+        toolbar.addAction(compute_action)
         mainLayout.addWidget(self.viewer)
         mainLayout.addWidget(source_manager)
         
@@ -41,7 +56,7 @@ class MainWindow(QMainWindow):
         widget.setLayout(mainLayout)
         self.setCentralWidget(widget)
 
-        compute_grid_action.trigger()
+        compute_action.trigger()
 
 
 class SimulatorToolbar(QToolBar):
@@ -57,11 +72,21 @@ class SourceTableView(QTableView):
         self.sourcesModel = model
 
         self.setModel(self.sourcesModel)
-        self.setIndexWidget(self.sourcesModel.index(1,2), QCheckBox())
+        self.setItemDelegateForColumn(2, checkbox.CheckBoxDelegate(self))
+        self.setItemDelegateForColumn(3, checkbox.CheckBoxDelegate(self))
+
+        self.setColumnWidth(0, 20)
+        self.setColumnWidth(1, 20)
+
+        self.setColumnWidth(2, self.rowHeight(0))
+        self.setColumnWidth(3, 10)
+
 
 class SourceManager(QWidget):
     def __init__(self, model, *args, **kwargs):
         super(SourceManager, self).__init__(*args, **kwargs)
+        self.setFixedHeight(300)
+        self.setFixedWidth(600)
         self.sourcesModel = model;
         self.layout = QVBoxLayout()
 
@@ -69,7 +94,6 @@ class SourceManager(QWidget):
 
         self.addButton = QPushButton("add")
         self.delButton = QPushButton("remove")
-
 
         self.actionLayout.addWidget(self.addButton)
         self.actionLayout.addWidget(self.delButton)
@@ -100,15 +124,20 @@ class SourceManager(QWidget):
 class GraphViewer(QWidget):
     def __init__(self, simulator, *args, **kwargs):
         super(QWidget, self).__init__(*args, **kwargs)
+        self.resize(800, 600)
         self.simulator = simulator
         self.layout = QVBoxLayout()
-        self.plot_widget = pq.ImageView()
+        #self.layout.setWidth(800)
+        self.plot_widget = pg.ImageView(view=pg.PlotItem())
+        x_axis = pg.AxisItem("bottom")
+        x_axis.setRange(-15,15)
+        x_axis.setScale(42)
         self.layout.addWidget(self.plot_widget)
         self.setLayout(self.layout)
         self.plot_widget.setPredefinedGradient("thermal")
 
     def plotResult(self):
-        self.plot_widget.setImage(self.simulator.result_db)
+        self.plot_widget.setImage(self.simulator.result)
         self.plot_widget.show()
 
 

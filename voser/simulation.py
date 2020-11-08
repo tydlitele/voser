@@ -1,5 +1,5 @@
 from PyQt5 import QtCore
-from dataModel import *
+#from dataModel import *
 import math
 import numpy as np
 import source
@@ -7,27 +7,6 @@ import source
 distance_limit = 1
 Pref = 20e-6
 
-
-
-#this wolud work and would be nice and kinda pythonic
-#but terribly inefficient
-#i am leaving it here for now, altough this code isn't really used
-#oh, and this works on units of acoustis pressure (~Pa), not logarithmic (~dB)
-class cosWave:
-    def __init__(self, a, phi):
-        self.a = a
-        self.phi = phi
-
-    def __init__(self, distance, dref, k, phi): #dref: reference level in dB, phi: phase shift of original source
-        self.a = dref + 20*np.log10(1/distance)
-        self.phi = phi + distance*k
-
-    def __add__(self, other):
-        s=self.a*math.sin(self.phi) + other.a*math.sin(other.phi)
-        c=self.a*math.cos(self.phi) + other.a*math.cos(other.phi)
-        a = np.sqrt(np.pow(c, 2) + np.pow(s, 2))
-        phi = np.arctan2(s/c)
-        return cosWave(a, phi)
 
 
 
@@ -47,19 +26,14 @@ def superpose2Waves(a1, phi1, a2, phi2):
 
     return (np.sqrt(s**2 + c**2), np.arctan(s/c))
 
-
-def pascalsTodB(P):
-    return 20*np.log10(P/Pref)
-
+def coords1d(beg, end, samples):
+    width = (end-beg)/samples
+    coords = np.linspace(beg + .5*width, end-.5*width, samples)
+    return coords
 
 class Simulator:
     def __init__(self):
-
-        sub1 = source.Source(-1, 0, True, False, 0, 0)
-        sub2= source.Source(1, 0, True, False, 0, 0)
-        
-        initialList=[sub1, sub2]
-        self.sourcesModel = SourcesModel(initialList)
+        self.sources = []
 
         self.xmin = -15
         self.xmax = 15
@@ -67,8 +41,8 @@ class Simulator:
         self.ymax = 15
 
 
-        self.xsamples = 150
-        self.ysamples = 150
+        self.xsamples = 8
+        self.ysamples = 8
         
 
         #Sound pressure level [dBa @ 1m]
@@ -78,94 +52,65 @@ class Simulator:
         self.v = 300
 
     def k(self):
-        return (2*np.pi * self.f/self.v)
+        return (self.w()/self.v)
 
-    def getSourcesModel(self):
-        return self.sourcesModel
+    def w(self):
+        return 2*np.pi*self.f
 
-    def computeGrid(self):
-        x_width = (self.xmax-self.xmin)/self.xsamples
-        y_width = (self.ymax-self.ymin)/self.ysamples
-        self.x_coords = np.linspace(self.xmin+.5*x_width, self.xmax-.5*x_width, num=self.xsamples)
-        self.y_coords = np.linspace(self.xmin+.5*x_width, self.xmax-.5*x_width, num=self.xsamples)
+   
+    def initializeSources(self, sources):
+        '''
+            Accepts list of sources
+        '''
+        self.sources = []
+
+        #[print(*i) for i in sources]
+        self.sources= [source.Source(*i) for i in sources]
+        #print(self.sources)
+        print("Simulator loaded {} sources".format(len(self.sources)))
+ 
+    def coords(self, xmin=None, xmax=None, ymin=None, ymax=None, xsamples=None, ysamples=None):
+        '''
+            returns a tuple of np arrays
+            for x and y rectangular grid
+        '''
+        if xmin:
+            self.xmin = xmin
+        if xmax:
+            self.xmax = xmax
+        if ymin:
+            self.ymin = ymin
+        if ymax:
+            self.ymax = ymax
+        if xsamples:
+            self.xsamples = xsamples
+        if ysamples:
+            self.ysamples = ysampels
+
+        x_coords = coords1d(self.xmin, self.xmax, self.xsamples)
+        y_coords = coords1d(self.ymin, self.ymax, self.ysamples)
+
+        return (x_coords, y_coords)
+
+
+
+    def compute(self, sources=None):
+        if sources:
+            self.initializeSources(sources)
+
+        x_coords, y_coords = self.coords();
+        print(x_coords)
+        print(y_coords)
+
+        x_mesh, y_mesh = np.meshgrid(x_coords, y_coords)
+
+        print(self.sources[0][0], self.sources[0][1], self.sources[0][2])
+
+        #test = self.sources[0].vawe(x_mesh, y_mesh, self.k(), self.w())
+        self.result = self.sources[0].distance(x_mesh, y_mesh)
         
 
-        #now I will take sources into account
-        #first select active ones
-
-        processedSources = [source[:] for source in self.sourcesModel.sources if source.active]
-        self.sources_array = np.asarray(processedSources, dtype=np.float64)
-
-
-        #print(self.sources_array)
-
-
-        distances_array = np.empty((self.xsamples, self.ysamples, self.sources_array.shape[0]), dtype=np.float64)
-
-        #this is probably quite inefficient :(
-        #hopefully I will get to it later
-        for i in range(self.xsamples):
-            for j in range(self.ysamples):
-                #print(self.distances(self.x_coords[i], self.y_coords[j]))
-                distances_array[i, j, :] = self.distances(self.x_coords[i], self.y_coords[j])
-
-        print(distances_array.shape)
-
-        pressure_array = np.apply_along_axis(self.pressure, 2, distances_array)
-        phase_shift_array = np.apply_along_axis(self.phaseShift, 2, distances_array)
-
-        #another dirty hack
-        #I think I should have thnough about this before
-        self.a_array = np.empty((self.xsamples, self.ysamples), dtype=np.float64)
-        self.phi_array = np.empty((self.xsamples, self.ysamples), dtype=np.float64)
-
-        for i in range(self.xsamples):
-            for j in range(self.ysamples):
-                #print(self.distances(self.x_coords[i], self.y_coords[j]))
-                a, phi = superposeWaveArray(pressure_array[i, j, :], phase_shift_array[i, j, :])
-                self.a_array[i, j] = a
-                self.phi_array[i, j] = phi
-
-
-        self.result_db = pascalsTodB(self.a_array)
-        '''
-        from matplotlib import pyplot as plt
-        plt.imshow(self.result_db)
-        plt.show()
-        '''
-
-        print(pressure_array.shape)
-        print(phase_shift_array.shape)
-
-
-    def pressure(self, distances):
-        P1 = Pref*np.exp((self.D_ref + self.sources_array[:, 5])/20)
-        return P1/distances
-
-
-    def phaseShift(self, distances):
-        timeShift = self.k()*distances 
-        inversions = self.sources_array[:, 3]
-        return (timeShift + np.pi*inversions)
-
-    def distance(self, x1, y1, sourceNum):
-        if(isinstance(sourceNum, int)):
-            x2=self.sources_array[sourceNum, 0]
-            y2=self.sources_array[sourceNum, 1]
-
-        else:
-            raise("enter source index as parameter")
-        return(np.sqrt((x1-x2)**2 + (y1-y2)**2))
-
-
-    def distances(self, x, y):
-        distances = np.empty(self.sources_array.shape[0], dtype=np.float64)
-
-        for i in range(self.sources_array.shape[0]):
-            distances[i] = self.distance(x, y, i)
-            
-        #distances = distance(self.sourcesModel.sources, x, y)
-        #print(distances)
-        return distances
-
-
+    def xRange(self):
+        return self.xmin, self.xmax
+    def yRange(self):
+        return self.ymin, self.ymax
