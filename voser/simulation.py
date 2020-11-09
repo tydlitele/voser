@@ -35,14 +35,14 @@ class Simulator:
     def __init__(self):
         self.sources = []
 
-        self.xmin = -15
-        self.xmax = 15
-        self.ymin = -15
-        self.ymax = 15
+        self.xmin = -25
+        self.xmax = 25
+        self.ymin = -25
+        self.ymax = 25
 
 
-        self.xsamples = 8
-        self.ysamples = 8
+        self.xsamples = 200
+        self.ysamples = 200
         
 
         #Sound pressure level [dBa @ 1m]
@@ -62,6 +62,8 @@ class Simulator:
         '''
             Accepts list of sources
         '''
+        #i may just simply delete current list and create a new one
+        #since following computations will be more time expensive
         self.sources = []
 
         #[print(*i) for i in sources]
@@ -99,16 +101,16 @@ class Simulator:
             self.initializeSources(sources)
 
         x_coords, y_coords = self.coords();
-        print(x_coords)
-        print(y_coords)
 
         x_mesh, y_mesh = np.meshgrid(x_coords, y_coords)
 
-        print(self.sources[0][0], self.sources[0][1], self.sources[0][2])
+        distances = np.asarray([i.distance(x_mesh, y_mesh) for i in self.sources])
+        print(distances.shape)
+        self.result = np.amin(distances, axis=0)
 
-        #test = self.sources[0].vawe(x_mesh, y_mesh, self.k(), self.w())
-        self.result = self.sources[0].distance(x_mesh, y_mesh)
-        
+
+        #self.result = self.sources[0].distance(x_mesh, y_mesh)
+
 
     def xRange(self):
         return self.xmin, self.xmax

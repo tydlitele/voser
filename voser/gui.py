@@ -127,17 +127,23 @@ class GraphViewer(QWidget):
         self.resize(800, 600)
         self.simulator = simulator
         self.layout = QVBoxLayout()
-        #self.layout.setWidth(800)
-        self.plot_widget = pg.ImageView(view=pg.PlotItem())
-        x_axis = pg.AxisItem("bottom")
-        x_axis.setRange(-15,15)
-        x_axis.setScale(42)
-        self.layout.addWidget(self.plot_widget)
+
+        self.plt = pg.PlotItem(labels={'bottom': ('x', 'm'), 'left': ('y', 'm')})
+        self.view = pg.ImageView(view=self.plt)
+
+        self.layout.addWidget(self.view)
         self.setLayout(self.layout)
-        self.plot_widget.setPredefinedGradient("thermal")
+        self.view.setPredefinedGradient("thermal")
 
     def plotResult(self):
-        self.plot_widget.setImage(self.simulator.result)
-        self.plot_widget.show()
 
 
+        #first prepare scale factor for axes
+        x0, x1 = self.simulator.xRange()
+        y0, y1 = self.simulator.yRange()
+        xscale, yscale = (x1-x0) / self.simulator.xsamples, (y1-y0) / self.simulator.ysamples
+
+    
+        self.view.setImage(self.simulator.result.T, pos=[x0, y0], scale=[xscale, yscale])
+        self.plt.setAspectLocked(True)
+        self.view.show()
