@@ -1,6 +1,8 @@
 #VOSER
+
 ###Vojtův Otevřený Simulátor Exteriérových Reproduktorů
-###Vojta's open simulator of speakers for exteriors
+
+###Vojta's open PA speakers simulator
 
 Project VOSER is meant to be simple program for computing acoustic field produced by multiple sources.
 
