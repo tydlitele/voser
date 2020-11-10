@@ -58,7 +58,7 @@ class Source:
 		return np.sqrt((x-self.x)**2 + (y-self.y)**2)
 
 
-	def calculateLevel(self, distance, reference_level=0):
+	def calculateAmplitude(self, distance, reference_level=0):
 		'''
 			Returns sound level produced by this source in given position
 			Parameters
@@ -70,7 +70,7 @@ class Source:
 				pressure level in pascals, not in dB logarithimc scale
 
 		'''
-		p1 = basic_functions.dBTop(self.gain + reference_level) if self.active else 0
+		p1 = basic_functions.dBTop(self.gain + reference_level)
 		return(p1/distance)
 
 	
@@ -92,12 +92,12 @@ class Source:
 		'''
 		inversion_shift = np.pi if self.invert else 0;
 		delay_shift = self.delay*w
-		positional_shift = kx
+		positional_shift = k*distance
 		#not really sure, whether delay shift should be negative
 		return (positional_shift - delay_shift + inversion_shift)
 
 
-	def vawe(self, x, y, k, w, reference_level = 0, distance_limit=0.5):
+	def vawe(self, x, y, k, w, reference_level = 0, distance_limit = 0.5):
 		'''
 			Returns sound level produced by this source in given position
 			Parameters
@@ -116,7 +116,10 @@ class Source:
 		'''
 		#print(x, y)
 		dist = self.distance(x, y)
-		if (dist<distance_limit):
-			return(np.nan, np.nan)
-		else:
-			return(self.calculateLevel(dist, reference_level=reference_level), self.calculatePhase(dist, k, w))
+		mask = dist>distance_limit
+
+		amplitude = np.where(mask, self.calculateAmplitude(dist, reference_level=reference_level), np.nan)
+		phase = np.where(mask, self.calculatePhase(dist, k, w), np.nan)
+
+		return amplitude, phase
+		

@@ -16,8 +16,8 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
 
 
-        sub1 = datamodel.Source(-1, 0, True, False, 0, 0)
-        sub2 = datamodel.Source(1, 0, True, False, 0, 0)        
+        sub1 = datamodel.Source(-5, 0, True, False, 0, 0)
+        sub2 = datamodel.Source(5, 0, True, False, 0, 0)        
         initialList=[sub1, sub2]
 
         self.sourcesModel = datamodel.SourcesModel(initialList)
@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
 
         #print(self.sourcesModel.getActiveSources())
 
-        compute_action = QAction(QIcon("./img/compute.png"), "compute grid", self)
+        compute_action = QAction(QIcon("./img/compute_big.png"), "compute grid", self)
         compute_action.triggered.connect(compute)
         '''
         compute = lambda sources=self.sourcesModel.getActiveSources(): self.simulator.compute(sources)

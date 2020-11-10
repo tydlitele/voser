@@ -4,16 +4,80 @@
 		"selected_items":
 		[
 			[
+				"dista",
+				"distances\tstatement"
+			],
+			[
+				"x",
+				"x_mesh\tstatement"
+			],
+			[
+				"sca",
+				"scaleAxes\tfunction"
+			],
+			[
+				"axis",
+				"x_axis"
+			],
+			[
+				"set",
+				"setRange\tfunction"
+			],
+			[
+				"y_",
+				"y_mesh\tstatement"
+			],
+			[
+				"sou",
+				"sources\tstatement"
+			],
+			[
+				"y",
+				"y_coords\tstatement"
+			],
+			[
+				"coo",
+				"coords"
+			],
+			[
+				"xm",
+				"xmin\tparam"
+			],
+			[
+				"coord",
+				"coords"
+			],
+			[
+				"none",
+				"None\tkeyword"
+			],
+			[
+				"source",
+				"sourcesModel\tstatement"
+			],
+			[
+				"com",
+				"compute\tstatement"
+			],
+			[
+				"acti",
+				"active_sources\tstatement"
+			],
+			[
+				"sour",
+				"sources\tparam"
+			],
+			[
+				"active",
+				"active_sources\tstatement"
+			],
+			[
 				"__",
 				"__opetator"
 			],
 			[
 				"dis",
 				"dist\tstatement"
-			],
-			[
-				"dista",
-				"distance"
 			],
 			[
 				"db",
@@ -84,10 +148,6 @@
 				"D_rel"
 			],
 			[
-				"source",
-				"sourceNum"
-			],
-			[
 				"sources",
 				"sourcesArray"
 			],
@@ -102,10 +162,6 @@
 			[
 				"distances",
 				"distancesArray\tstatement"
-			],
-			[
-				"sour",
-				"sourcesArray\tstatement"
 			],
 			[
 				"cou",
@@ -124,10 +180,6 @@
 				"log10\tinstance"
 			],
 			[
-				"sou",
-				"sourcesModel\tstatement"
-			],
-			[
 				"distan",
 				"distances\tstatement"
 			],
@@ -140,20 +192,12 @@
 				"float64"
 			],
 			[
-				"x",
-				"x_coords"
-			],
-			[
 				"atan",
 				"atan2\tfunction"
 			],
 			[
 				"re",
 				"recrdtype"
-			],
-			[
-				"com",
-				"compute_grid_action"
 			],
 			[
 				"co",
@@ -470,29 +514,66 @@
 			[
 				"pl",
 				"plot\tfunction"
-			],
-			[
-				"wri",
-				"write\tfunction"
-			],
-			[
-				"Buff",
-				"buff_size"
-			],
-			[
-				"ze",
-				"zeros_like\tfunction"
-			],
-			[
-				"lin",
-				"linspace\tfunction"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "voser/simulation.py",
+			"settings":
+			{
+				"buffer_size": 2765,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "voser/source.py",
+			"settings":
+			{
+				"buffer_size": 2965,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "voser/datamodel.py",
+			"settings":
+			{
+				"buffer_size": 2699,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readme.md",
+			"settings":
+			{
+				"buffer_size": 814,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "voser/gui.py",
+			"settings":
+			{
+				"buffer_size": 4570,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "def computeGrid(self):\n        x_width = (self.xmax-self.xmin)/self.xsamples\n        y_width = (self.ymax-self.ymin)/self.ysamples\n        self.x_coords = np.linspace(self.xmin+.5*x_width, self.xmax-.5*x_width, num=self.xsamples)\n        self.y_coords = np.linspace(self.xmin+.5*x_width, self.xmax-.5*x_width, num=self.xsamples)\n        \n\n        #now I will take sources into account\n        #first select active ones\n\n        processedSources = [source[:] for source in self.sourcesModel.sources if source.active]\n        self.sources_array = np.asarray(processedSources, dtype=np.float64)\n\n\n        #print(self.sources_array)\n\n\n        distances_array = np.empty((self.xsamples, self.ysamples, self.sources_array.shape[0]), dtype=np.float64)\n\n        #this is probably quite inefficient :(\n        #hopefully I will get to it later\n        for i in range(self.xsamples):\n            for j in range(self.ysamples):\n                #print(self.distances(self.x_coords[i], self.y_coords[j]))\n                distances_array[i, j, :] = self.distances(self.x_coords[i], self.y_coords[j])\n\n        print(distances_array.shape)\n\n        pressure_array = np.apply_along_axis(self.pressure, 2, distances_array)\n        phase_shift_array = np.apply_along_axis(self.phaseShift, 2, distances_array)\n\n        #another dirty hack\n        #I think I should have thnough about this before\n        self.a_array = np.empty((self.xsamples, self.ysamples), dtype=np.float64)\n        self.phi_array = np.empty((self.xsamples, self.ysamples), dtype=np.float64)\n\n        for i in range(self.xsamples):\n            for j in range(self.ysamples):\n                #print(self.distances(self.x_coords[i], self.y_coords[j]))\n                a, phi = superposeWaveArray(pressure_array[i, j, :], phase_shift_array[i, j, :])\n                self.a_array[i, j] = a\n                self.phi_array[i, j] = phi\n\n\n        self.result_db = pascalsTodB(self.a_array)\n        '''\n        from matplotlib import pyplot as plt\n        plt.imshow(self.result_db)\n        plt.show()\n        '''\n\n        print(pressure_array.shape)\n        print(phase_shift_array.shape)\n\n\n\n\n    def distance(self, x1, y1, sourceNum):\n        if(isinstance(sourceNum, int)):\n            x2=self.sources_array[sourceNum, 0]\n            y2=self.sources_array[sourceNum, 1]\n\n        else:\n            raise(\"enter source index as parameter\")\n        return(np.sqrt((x1-x2)**2 + (y1-y2)**2))\n\n\n    def distances(self, x, y):\n        distances = np.empty(self.sources_array.shape[0], dtype=np.float64)\n\n        for i in range(self.sources_array.shape[0]):\n            distances[i] = self.distance(x, y, i)\n            \n        #distances = distance(self.sourcesModel.sources, x, y)\n        #print(distances)\n        return distances\n\n\n    def pressure(self, distances):\n        P1 = Pref*np.exp((self.D_ref + self.sources_array[:, 5])/20)\n        return P1/distances\n\n\n    def phaseShift(self, distances):\n        timeShift = self.k()*distances \n        inversions = self.sources_array[:, 3]\n        return (timeShift + np.pi*inversions)\n\n\n",
+			"settings":
+			{
+				"buffer_size": 3078,
+				"line_ending": "Unix"
+			}
+		}
 	],
-	"build_system": "",
+	"build_system": "Anaconda Python Builder",
 	"build_system_choices":
 	[
 		[
@@ -764,6 +845,8 @@
 	],
 	"file_history":
 	[
+		"/home/vojta/voser/voser_edit.sublime-project",
+		"/home/vojta/voser/voser.sublime-workspace",
 		"/home/vojta/voser/voser/simulation.py",
 		"/home/vojta/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
 		"/home/vojta/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
@@ -889,9 +972,7 @@
 		"/home/vojta/fjfi/bakalarka/ForPravesh/plot1.py",
 		"/home/vojta/fjfi/bakalarka/GasPuffing/waveform_generator2/generate_short_pulses.py",
 		"/home/vojta/fjfi/bakalarka/GasPuffing/RP_commands",
-		"/home/vojta/fjfi/bakalarka/prace/packages.tex",
-		"/home/vojta/fjfi/NME2/zapocet/rk.cpp",
-		"/home/vojta/fjfi/NME2/zapocet/main.cpp"
+		"/home/vojta/fjfi/bakalarka/prace/packages.tex"
 	],
 	"find":
 	{
@@ -909,6 +990,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"25",
+			"        \"\"\"",
+			"\"\"\"\n",
+			"result",
+			"xmin",
+			"none",
 			"cmd",
 			"selec"
 		],
@@ -928,8 +1015,192 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "voser/simulation.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2213,
+								2213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1101.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "voser/source.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "voser/datamodel.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								552,
+								552
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "voser/gui.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								385,
+								385
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								959,
+								959
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/vojta/voser/voser",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -950,11 +1221,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.45463839996,
 			1.0
 		],
 		"rows":
@@ -966,7 +1244,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 156.0
+		"height": 215.0
 	},
 	"output.find_results":
 	{
@@ -998,6 +1276,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/invoice/invoice.sublime-project"
+			]
 		],
 		"width": 381.0
 	},
@@ -1010,7 +1292,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

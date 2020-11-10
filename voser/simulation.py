@@ -3,6 +3,7 @@ from PyQt5 import QtCore
 import math
 import numpy as np
 import source
+import basic_functions
 
 distance_limit = 1
 Pref = 20e-6
@@ -44,6 +45,7 @@ class Simulator:
         self.xsamples = 200
         self.ysamples = 200
         
+        self.distance_limit = 1.
 
         #Sound pressure level [dBa @ 1m]
         self.D_ref = 90
@@ -105,12 +107,35 @@ class Simulator:
         x_mesh, y_mesh = np.meshgrid(x_coords, y_coords)
 
         distances = np.asarray([i.distance(x_mesh, y_mesh) for i in self.sources])
-        print(distances.shape)
-        self.result = np.amin(distances, axis=0)
+
+        n = len(self.sources)
+
+        #now calculate amplitude and phase for every source in every point
+        #I dont like this part
+        #seem too naive and not very "pythonic" and "numpyic"
+
+        amplitudes = np.empty((self.xsamples, self.ysamples, len(self.sources)))
+        phases = np.empty((self.xsamples, self.ysamples, len(self.sources)))
+        
+        for i in range(n):
+            amplitudes[:, :, i], phases [:, :, i] = self.sources[i].vawe(x_mesh, y_mesh, self.k(), self.w(), reference_level=self.D_ref, distance_limit=self.distance_limit)
 
 
-        #self.result = self.sources[0].distance(x_mesh, y_mesh)
+        #and now this is even worse
+        #any hints how to vectorise this?
+        amplitude = np.empty((self.xsamples, self.ysamples))
+        phase = np.empty((self.xsamples, self.ysamples))
 
+
+        for i in range (self.xsamples):
+            for j in range (self.ysamples):
+                amplitude[i, j], phase[i, j] = superposeWaveArray(amplitudes[i, j, :], phases[i, j, :])
+
+        self.result = basic_functions.pTodB(amplitude)
+        return(amplitude, phase)
+
+
+        #print(basic_functions.pTodB(self.sources[0].calculateAmplitude(2, reference_level=self.D_ref)))
 
     def xRange(self):
         return self.xmin, self.xmax
